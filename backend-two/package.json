@@ -1,0 +1,17 @@
+{
+  "name": "backend-two",
+  "version": "1.0.0",
+  "description": "Backend Service Two - Separate service for Assignment 2",
+  "main": "server.js",
+  "scripts": {
+    "start": "node init && node server.js",
+    "dev": "node init && nodemon server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}

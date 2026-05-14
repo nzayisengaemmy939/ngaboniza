@@ -1,0 +1,15 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "framework": "vite",
+  "rewrites": [
+    {
+      "source": "/api/service1/:path*",
+      "destination": "https://your-backend-one.vercel.app/:path*"
+    },
+    {
+      "source": "/api/service2/:path*",
+      "destination": "https://your-backend-two.vercel.app/:path*"
+    }
+  ]
+}

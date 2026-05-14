@@ -1,0 +1,939 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 0.75rem 2rem;
+  display: flex;
+  gap: 0.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 2px solid rgba(102, 126, 234, 0.2);
+}
+
+.nav-link {
+  color: #667eea;
+  text-decoration: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.nav-link:hover {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.content {
+  flex: 1;
+  padding: 1.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.page-container {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h1 {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  font-size: 2rem;
+  font-weight: 700;
+  position: relative;
+}
+
+h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 2px;
+}
+
+h2 {
+  color: #667eea;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.info-section {
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+  padding: 1.2rem;
+  border-radius: 12px;
+  border-left: 4px solid #667eea;
+}
+
+.info-item {
+  margin-bottom: 0.6rem;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.info-item strong {
+  color: #667eea;
+  min-width: 180px;
+}
+
+.learning-section {
+  margin-top: 1.5rem;
+  background: #f8f9ff;
+  padding: 1.2rem;
+  border-radius: 12px;
+}
+
+.learning-section p {
+  line-height: 1.7;
+  margin-bottom: 0.8rem;
+  text-align: justify;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.assignments-list {
+  list-style: none;
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.8rem;
+}
+
+.assignments-list li {
+  margin-bottom: 0;
+}
+
+.assignments-list a {
+  color: #667eea;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0.8rem 1.2rem;
+  display: block;
+  transition: all 0.3s ease;
+  background: white;
+  border-radius: 10px;
+  border: 2px solid #e0e7ff;
+  font-weight: 500;
+}
+
+.assignments-list a:hover {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  transform: translateX(8px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+  border-color: transparent;
+}
+
+.excel-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 1rem;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.excel-table th,
+.excel-table td {
+  border: none;
+  padding: 0.9rem;
+  text-align: left;
+  border-bottom: 1px solid #e0e7ff;
+}
+
+.excel-table th {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.excel-table th:first-child {
+  border-top-left-radius: 12px;
+}
+
+.excel-table th:last-child {
+  border-top-right-radius: 12px;
+}
+
+.excel-table tr:nth-child(even) {
+  background-color: #f8f9ff;
+}
+
+.excel-table tr:hover {
+  background-color: #f0f4ff;
+  transition: background-color 0.2s ease;
+}
+
+.excel-table input,
+.excel-table textarea {
+  width: 100%;
+  padding: 0.6rem;
+  border: 2px solid #e0e7ff;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.excel-table input:focus,
+.excel-table textarea:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.excel-table textarea {
+  min-height: 50px;
+  resize: vertical;
+}
+
+.btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn:disabled {
+  background: linear-gradient(135deg, #cbd5e0 0%, #a0aec0 100%);
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+.message {
+  padding: 1rem 1.2rem;
+  border-radius: 12px;
+  margin-top: 1rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.message.success {
+  background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+  color: #155724;
+  border-left: 4px solid #28a745;
+}
+
+.message.success::before {
+  content: '✓';
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.message.error {
+  background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
+  color: #721c24;
+  border-left: 4px solid #dc3545;
+}
+
+.message.error::before {
+  content: '✕';
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.service-message {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+  border: 2px solid #667eea;
+  padding: 1.5rem;
+  border-radius: 16px;
+  margin: 1.5rem 0;
+  font-size: 1rem;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+}
+
+.service-message h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.email-form {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+  border-radius: 16px;
+  border: 2px solid #e0e7ff;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #667eea;
+  font-size: 0.95rem;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 2px solid #e0e7ff;
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+}
+
+.loading {
+  text-align: center;
+  padding: 3rem;
+  color: #667eea;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.loading::after {
+  content: '...';
+  animation: dots 1.5s steps(4, end) infinite;
+}
+
+@keyframes dots {
+  0%, 20% { content: '.'; }
+  40% { content: '..'; }
+  60%, 100% { content: '...'; }
+}
+
+.error-message {
+  color: #dc3545;
+  padding: 1rem 1.2rem;
+  background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
+  border-radius: 12px;
+  margin: 1rem 0;
+  border-left: 4px solid #dc3545;
+  font-weight: 500;
+}
+
+.combined-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.assignment-section {
+  border: 2px solid #e0e7ff;
+  padding: 1.2rem;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.02) 0%, rgba(118, 75, 162, 0.02) 100%);
+  transition: all 0.3s ease;
+}
+
+.assignment-section:hover {
+  border-color: #667eea;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+    padding: 0.5rem 1rem;
+    gap: 0.3rem;
+  }
+  
+  .nav-brand {
+    font-size: 1rem;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+  
+  .nav-links {
+    width: 100%;
+    justify-content: space-around;
+  }
+  
+  .nav-link {
+    padding: 0.5rem 0.6rem;
+    font-size: 0.8rem;
+  }
+  
+  .content {
+    padding: 0.75rem;
+  }
+  
+  .page-container {
+    padding: 1rem;
+    border-radius: 12px;
+  }
+  
+  h1 {
+    font-size: 1.4rem;
+  }
+  
+  h2 {
+    font-size: 1.1rem;
+  }
+  
+  .info-section {
+    padding: 1rem;
+  }
+  
+  .info-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
+    font-size: 0.9rem;
+  }
+  
+  .info-item strong {
+    min-width: auto;
+  }
+  
+  .learning-section {
+    padding: 1rem;
+  }
+  
+  .learning-section p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+  
+  .assignments-list a {
+    padding: 0.7rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .excel-table {
+    font-size: 0.8rem;
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  
+  .excel-table th,
+  .excel-table td {
+    padding: 0.5rem;
+    min-width: 100px;
+  }
+  
+  .excel-table input,
+  .excel-table textarea {
+    font-size: 0.85rem;
+    padding: 0.4rem;
+  }
+  
+  .excel-table textarea {
+    min-height: 40px;
+  }
+  
+  .btn {
+    width: 100%;
+    padding: 0.7rem 1.5rem;
+    font-size: 0.95rem;
+  }
+  
+  .service-message {
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .service-message h2 {
+    font-size: 1rem;
+  }
+  
+  .email-form {
+    padding: 1rem;
+  }
+  
+  .form-group input {
+    padding: 0.6rem 0.8rem;
+    font-size: 0.9rem;
+  }
+  
+  .combined-container {
+    gap: 1rem;
+  }
+  
+  .assignment-section {
+    padding: 1rem;
+  }
+  
+  .footer {
+    padding: 0.75rem 1rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+  .nav-brand {
+    font-size: 0.9rem;
+  }
+  
+  .nav-link {
+    padding: 0.4rem 0.5rem;
+    font-size: 0.75rem;
+    border-radius: 15px;
+  }
+  
+  h1 {
+    font-size: 1.2rem;
+  }
+  
+  h2 {
+    font-size: 1rem;
+  }
+  
+  .info-item {
+    font-size: 0.85rem;
+  }
+  
+  .learning-section p {
+    font-size: 0.85rem;
+  }
+  
+  .assignments-list a {
+    font-size: 0.85rem;
+    padding: 0.6rem 0.8rem;
+  }
+  
+  .excel-table {
+    font-size: 0.75rem;
+  }
+  
+  .excel-table th,
+  .excel-table td {
+    padding: 0.4rem;
+    min-width: 80px;
+  }
+  
+  .btn {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+  }
+  
+  .message {
+    font-size: 0.85rem;
+    padding: 0.8rem 1rem;
+  }
+  
+  .service-message {
+    font-size: 0.85rem;
+    padding: 0.8rem;
+  }
+  
+  .email-form {
+    padding: 0.8rem;
+  }
+  
+  .form-group label {
+    font-size: 0.85rem;
+  }
+  
+  .form-group input {
+    font-size: 0.85rem;
+  }
+}
+
+/* Tablet landscape */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .content {
+    max-width: 900px;
+    padding: 1.2rem;
+  }
+  
+  .page-container {
+    padding: 1.3rem;
+  }
+  
+  h1 {
+    font-size: 1.8rem;
+  }
+  
+  h2 {
+    font-size: 1.3rem;
+  }
+  
+  .excel-table th,
+  .excel-table td {
+    padding: 0.7rem;
+  }
+}
+
+/* Large screens */
+@media (min-width: 1400px) {
+  .content {
+    max-width: 1600px;
+  }
+  
+  .page-container {
+    padding: 2rem;
+  }
+  
+  h1 {
+    font-size: 2.2rem;
+  }
+  
+  h2 {
+    font-size: 1.6rem;
+  }
+}
+
+/* Navigation Brand */
+.nav-brand {
+  font-weight: 700;
+  font-size: 1.2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-right: auto;
+}
+
+.nav-links {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Footer */
+.footer {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 1rem 2rem;
+  text-align: center;
+  border-top: 2px solid rgba(102, 126, 234, 0.2);
+  margin-top: auto;
+}
+
+.footer p {
+  color: #667eea;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection color */
+::selection {
+  background: rgba(102, 126, 234, 0.3);
+  color: #333;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+/* Print styles */
+@media print {
+  .navbar,
+  .footer,
+  .btn {
+    display: none;
+  }
+  
+  .page-container {
+    box-shadow: none;
+    padding: 0;
+  }
+}
+
+
+/* Table wrapper for better mobile scrolling */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 1rem 0;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+@media (max-width: 768px) {
+  .table-wrapper {
+    margin: 0.5rem -1rem;
+    border-radius: 0;
+  }
+  
+  .table-wrapper .excel-table {
+    margin: 0;
+  }
+}
+
+/* Utility classes for responsive visibility */
+.mobile-only {
+  display: none;
+}
+
+.desktop-only {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .mobile-only {
+    display: block;
+  }
+  
+  .desktop-only {
+    display: none;
+  }
+}
+
+/* Better touch targets for mobile */
+@media (max-width: 768px) {
+  button,
+  a,
+  input,
+  textarea,
+  select {
+    min-height: 44px;
+  }
+  
+  .nav-link {
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* Prevent horizontal scroll on mobile */
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+  
+  .app {
+    overflow-x: hidden;
+  }
+  
+  .page-container {
+    overflow-x: hidden;
+  }
+}
+
+/* Improve form usability on mobile */
+@media (max-width: 768px) {
+  .form-group input,
+  .form-group textarea {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+}
+
+/* Stack layout for very small screens */
+@media (max-width: 480px) {
+  .combined-container .assignment-section {
+    margin: 0 -0.5rem;
+  }
+  
+  .info-section,
+  .learning-section,
+  .email-form {
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+    border-radius: 8px;
+  }
+}
+
+/* Landscape orientation adjustments */
+@media (max-height: 600px) and (orientation: landscape) {
+  .navbar {
+    padding: 0.4rem 1rem;
+  }
+  
+  .nav-brand {
+    font-size: 0.9rem;
+  }
+  
+  .nav-link {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+  }
+  
+  .content {
+    padding: 0.5rem;
+  }
+  
+  h1 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  h2 {
+    font-size: 1rem;
+    margin-top: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .info-section,
+  .learning-section,
+  .assignment-section {
+    padding: 0.8rem;
+  }
+}
+
+/* Print optimization */
+@media print {
+  .navbar,
+  .footer,
+  .btn,
+  .nav-link {
+    display: none !important;
+  }
+  
+  .page-container {
+    box-shadow: none;
+    padding: 0;
+    border-radius: 0;
+  }
+  
+  .content {
+    padding: 0;
+    max-width: 100%;
+  }
+  
+  h1, h2 {
+    color: #000 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  
+  .excel-table {
+    page-break-inside: avoid;
+  }
+  
+  .assignment-section {
+    page-break-inside: avoid;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .nav-link,
+  .btn,
+  .excel-table th {
+    border: 2px solid currentColor;
+  }
+  
+  .message {
+    border: 2px solid currentColor;
+  }
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Dark mode support (optional) */
+@media (prefers-color-scheme: dark) {
+  /* Uncomment to enable dark mode
+  body {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  }
+  
+  .page-container {
+    background: #0f3460;
+    color: #e0e0e0;
+  }
+  
+  .navbar,
+  .footer {
+    background: rgba(15, 52, 96, 0.95);
+  }
+  */
+}

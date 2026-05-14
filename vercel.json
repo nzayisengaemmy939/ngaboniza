@@ -1,0 +1,35 @@
+{
+  "version": 2,
+  "name": "web-services-assignment",
+  "builds": [
+    {
+      "src": "frontend/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
+    },
+    {
+      "src": "backend-one/server.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "backend-two/server.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/service1/(.*)",
+      "dest": "backend-one/server.js"
+    },
+    {
+      "src": "/api/service2/(.*)",
+      "dest": "backend-two/server.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "frontend/$1"
+    }
+  ]
+}
